@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.png" />
+    <script src="script/script.js" defer></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="Logo">LIBRARY</div>
+      <ul class="link">
+        <li><button class="button add-book">Add book</button></li>
+        <li><button class="button dummy">Dummy</button></li>
+      </ul>
+    </nav>
+    <div class="modal">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="input-field">
+            <label for="input-book-name">
+              Title:
+              <input
+                type="text"
+                id="input-book-name"
+                name="input-book-name"
+                class="modal-input input-text"
+              />
+            </label>
+
+            <label for="input-book-author">
+              Author:
+              <input
+                type="text"
+                name="input-book-author"
+                id="input-book-author"
+                class="modal-input input-text"
+              />
+            </label>
+            <label for="input-book-pages">
+              Number of Pages:
+              <input
+                type="text"
+                class="modal-input input-text"
+                name="input-book-pages"
+                id="input-book-pages"
+              />
+            </label>
+            <label for="input-book-status">
+              Status (Reading/Finished?):
+              <input
+                type="checkbox"
+                name="input-book-status"
+                id="input-book-status"
+                class="modal-input"
+              />
+            </label>
+          </div>
+        </div>
+        <div class="modal-input-control">
+          <button class="button input-confirm">Confirm</button>
+          <button class="button input-close">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <div class="container"></div>
+    <div class="footer"></div>
+  </body>
+</html>
