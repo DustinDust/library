@@ -60,7 +60,7 @@ ul.link {
   min-width: 16vw;
   min-height: 40vh;
   max-height: 40vh;
-  overflow-x: scroll;
+  overflow-y: scroll;
   text-align: center;
   border-radius: 5px;
   display: flex;
@@ -73,16 +73,16 @@ ul.link {
   font-family: "Montserrat", sans-serif;
   color: var(--text-color);
   background-color: var(--navbar-bg-color);
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .author {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 0.3rem;
 }
 
 .title {
-  font-size: 4rem;
+  font-size: 3rem;
   margin-bottom: 0.5rem;
   position: relative;
 }
@@ -93,7 +93,7 @@ ul.link {
   bottom: -0.5rem;
   left: 0;
   background-color: var(--text-color);
-  height: 1%;
+  height: 1px;
   width: 100%;
   transform: scaleX(0.5);
   transform-origin: center;
@@ -117,22 +117,14 @@ ul.link {
   padding: 2vh 5vw 2vh 5vw;
 }
 
-.add-book,
-.dummy,
-.toggle,
-.input-confirm,
-.input-close {
+.button {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   position: relative;
   z-index: 1;
 }
 
-.add-book::after,
-.dummy::after,
-.toggle::after,
-.input-confirm::after,
-.input-close::after {
+.button::after {
   content: "";
   width: 100%;
   height: 100%;
@@ -149,22 +141,21 @@ ul.link {
   background-color: rgba(0, 255, 0, 0.4);
 }
 
-.input-close::after {
+.input-close::after,
+.remove::after {
   background-color: rgba(255, 0, 0, 0.7);
 }
 
-.add-book:hover::after,
-.dummy:hover::after,
-.toggle:hover::after,
-.input-confirm:hover::after,
-.input-close:hover::after {
+.button:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
 
-.toggle {
+.toggle,
+.remove {
   align-self: center;
   background-color: var(--card-bg-color);
+  margin-bottom: 2rem;
 }
 
 .modal-content label {
@@ -212,7 +203,22 @@ ul.link {
 }
 
 .input-text {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   display: block;
+  background-color: var(--bg-color);
+  font-size: 3rem;
+  color: var(--text-color);
+  font-family: "Montserrat", sans-serif;
+  padding: 1rem;
+  position: relative;
+  border-radius: 9px;
+}
+
+.input-text:focus {
+  border-bottom: solid var(--btn-bg-color);
+
+  outline: none;
 }
 
 .modal-input-control {
