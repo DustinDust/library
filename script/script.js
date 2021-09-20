@@ -1,16 +1,34 @@
 /*----------Data----------*/
 let myLibrary = [];
 
-function Book(title, author, pages, status) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.status = status ? "Finished" : "Reading";
+// function Book(title, author, pages, status) {
+//   this.title = title;
+//   this.author = author;
+//   this.pages = pages;
+//   this.status = status ? "Finished" : "Reading";
+// }
+
+// Book.prototype.toggleStatus = function () {
+//   this.status = this.status === "Reading" ? "Finished" : "Reading";
+// };
+
+class Book {
+  title;
+  author;
+  pages;
+  status;
+  constructor(title, author, pages, status) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.status = status ? "Finished" : "Reading";
+  }
+
+  toggleStatus = () => {
+    this.status = this.status === "Reading" ? "Finished" : "Reading";
+  };
 }
 
-Book.prototype.toggleStatus = function () {
-  this.status = this.status === "Reading" ? "Finished" : "Reading";
-};
 /*------------------------------*/
 
 /*---------DOM Function----------*/
@@ -28,7 +46,7 @@ function createBookDom(book) {
   let bookDoom = createDomNode("div", "data-book-id", bookId, "book");
   let info = createDomNode("div", undefined, undefined, `info`);
   for (let propety in book) {
-    if (!book.hasOwnProperty(propety)) continue;
+    if (typeof book[propety] === "function") continue;
     let dataDisplayer = createDomNode("p", undefined, undefined, `${propety}`);
     dataDisplayer.textContent = book[propety];
     info.appendChild(dataDisplayer);
